@@ -1,3 +1,12 @@
+/*
+Sections
+    - Border Pop Animation
+    - Background Slide Animation
+    - Background Circle Animation
+    - Border Underline Animation
+    - Background Corner Animation
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
 
 *, *::before, *::after {
@@ -56,3 +65,37 @@ body {
     right: calc(var(--border-size) * -2);
     bottom: calc(var(--border-size) * -2);
 }
+/* Border Pop Animation - End */
+
+/* Background Slide Animation */
+.btn.btn-background-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: var(--hover-color);
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn.btn-background-slide:hover::before,
+.btn.btn-background-slide:focus::before {
+    transform: scaleX(1);
+}
+
+.btn.btn-background-slide {
+    z-index: 1;
+
+    transition: color 0.3s ease-in-out;
+}
+
+.btn.btn-background-slide:hover,
+.btn.btn-background-slide:focus {
+    color: var(--background-color);
+}
+/* Background Slide Animation - End */
