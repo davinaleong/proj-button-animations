@@ -7,189 +7,232 @@ Sections
     - Background Corner Animation
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap");
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --body-color: #999;
+  --font-size: 16px;
+  --background-color: #212121;
+  --hover-color: #ffeb3b;
+  --text-color: #fff;
+  --border-size: 3px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    font-size: 16px;
-    padding: 20vh 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background: #ccc;
+  font-size: var(--font-size);
+  color: var(--background-color);
+  background: var(--body-color);
+  font-family: Montserrat, sans-serif;
+  position: relative;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  padding: 20vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer {
+  padding: 2vw 2vh;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+}
+
+a,
+a:visited,
+a:active {
+  color: var(--hover-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: var(--background-color);
+}
+
+.github {
+    display: block;
+    font-size: 3em;
+    padding: 2vw 2vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .btn {
-    display: block;
-    padding: 0.8em 1.2em;
-    font-size: 1.2em;
-    font-family: Montserrat, sans-serif;
-    border: none;
-    border-radius: 0;
-    cursor: pointer;
-    color: var(--text-color);
-    position: relative;
-    background-color: var(--background-color);
-    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.5);
-
-    --background-color: #212121;
-    --hover-color: #ffeb3b;
-    --text-color: #fff;
-    --border-size: 3px;
+  display: block;
+  padding: 0.8em 1.2em;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  color: var(--text-color);
+  position: relative;
+  background-color: var(--background-color);
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Border Pop Animation */
 .btn.btn-border-pop::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    border: var(--border-size) solid var(--background-color);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border: var(--border-size) solid var(--background-color);
 
-    transition: top, left, right, bottom, 0.1s ease-in-out;
+  transition: top, left, right, bottom, 0.1s ease-in-out;
 }
 
 .btn.btn-border-pop:hover::before,
 .btn.btn-border-pop:focus::before {
-    top: calc(var(--border-size) * -2);
-    left: calc(var(--border-size) * -2);
-    right: calc(var(--border-size) * -2);
-    bottom: calc(var(--border-size) * -2);
+  top: calc(var(--border-size) * -2);
+  left: calc(var(--border-size) * -2);
+  right: calc(var(--border-size) * -2);
+  bottom: calc(var(--border-size) * -2);
 }
 /* Border Pop Animation - End */
 
 /* Background Slide Animation */
 .btn.btn-background-slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: var(--hover-color);
-    transform: scaleX(0);
-    transform-origin: left;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--hover-color);
+  transform: scaleX(0);
+  transform-origin: left;
 
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .btn.btn-background-slide:hover::before,
 .btn.btn-background-slide:focus::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .btn.btn-background-slide {
-    z-index: 1;
+  z-index: 1;
 
-    transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .btn.btn-background-slide:hover,
 .btn.btn-background-slide:focus {
-    color: var(--background-color);
+  color: var(--background-color);
 }
 /* Background Slide Animation - End */
 
 /* Background Circle Animation */
 .btn.btn-background-circle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: var(--background-color);
-    border-radius: 50%;
-    transform: scale(1.5);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--background-color);
+  border-radius: 50%;
+  transform: scale(1.5);
 
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .btn.btn-background-circle:hover::before,
 .btn.btn-background-circle:focus::before {
-    transform: scale(0);
+  transform: scale(0);
 }
 
 .btn.btn-background-circle {
-    z-index: 1;
-    overflow: hidden;
-    background: var(--hover-color);
+  z-index: 1;
+  overflow: hidden;
+  background: var(--hover-color);
 
-    transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .btn.btn-background-circle:hover,
 .btn.btn-background-circle:focus {
-    color: var(--background-color);
+  color: var(--background-color);
 }
 /* Background Circle Animation - End */
 
 /* Border Underline Animation */
 .btn.btn-border-underline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: var(--border-size);
-    z-index: -1;
-    background: var(--hover-color);
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--border-size);
+  z-index: -1;
+  background: var(--hover-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 .btn.btn-border-underline:hover::before,
 .btn.btn-border-underline:focus::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .btn.btn-border-underline {
-    z-index: 1;
+  z-index: 1;
 }
 /* Border Underline Animation - End */
 
 /* Background Corner Animation */
 .btn.btn-background-corner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: var(--hover-color);
-    transform: scale(0);
-    transform-origin: left top;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--hover-color);
+  transform: scale(0);
+  transform-origin: left top;
 
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .btn.btn-background-corner:hover::before,
 .btn.btn-background-corner:focus::before {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .btn.btn-background-corner {
-    z-index: 1;
+  z-index: 1;
 
-    transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .btn.btn-background-corner:hover,
 .btn.btn-background-corner:focus {
-    color: var(--background-color);
+  color: var(--background-color);
 }
 /* Background Corner Animation - End */
