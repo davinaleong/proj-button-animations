@@ -113,7 +113,7 @@ body {
     border-radius: 50%;
     transform: scale(1.5);
 
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .btn.btn-background-circle:hover::before,
@@ -126,7 +126,7 @@ body {
     overflow: hidden;
     background: var(--hover-color);
 
-    transition: color 0.5s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 .btn.btn-background-circle:hover,
