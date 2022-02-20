@@ -1,6 +1,6 @@
 # Button Animations (CSS only)
 
-I created this project to improve my `CSS`.
+I created this project to improve my `CSS`. Demo [here](https://davinaleong.github.io/proj-button-animations/).
 
 Credits to Kyle of [Web Dev Simplified](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw).
 
